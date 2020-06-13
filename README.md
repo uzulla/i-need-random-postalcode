@@ -1,12 +1,23 @@
 KEN_ALL.CSVからランダムに郵便番号を引いたり、テスト用に100件くらいデータをつくるやつ
 ====
 
+## generate
+
 ```
 $ make output.php
 $ cat output.php
 ```
 
-## or
+## use output.php
+
+```php
+<?php
+$addr_list = include "output.php";
+$addr = $addr_list[rand(0,count($addr_list)-1)];
+echo "〒{$addr[0]} {$addr[1]}{$addr[2]}".PHP_EOL;
+```
+
+## or, get random.
 
 ```
 $ make test
